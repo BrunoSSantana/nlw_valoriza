@@ -11,7 +11,9 @@ class CreateUserService {
   async execute({ email, name, admin }: IUserRequest) {
     const userRepository = getCustomRepository(UsersRepositories)
 
-    const userAlreadyExists = userRepository.findOne({ email });
+    const userAlreadyExists = await userRepository.findOne({ email });
+
+    console.log(userAlreadyExists);
 
     if (userAlreadyExists) {
       throw new Error("User already Exists");
@@ -20,8 +22,10 @@ class CreateUserService {
     const user = userRepository.create({
       name,
       email,
-      admin,
+      admin: false,
     });
+
+    console.log(user);
 
     await userRepository.save(user);
   }
