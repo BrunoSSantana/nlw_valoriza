@@ -22,32 +22,47 @@ const listUserSendComplimentsController = new ListUserSendComplimentsController(
 const listTagsController= new ListTagsController();
 const listUsersController= new ListUsersController();
 
-router.post(
+router
+.post(
   "/tags", 
   ensureAuthenticated, 
   ensureAdmin, 
   createTagController.handle
-);
-router.post("/users", createUserController.handle);
-router.post("/login", authenticateUserController.handle);
-router.post(
+)
+.post(
+  "/users", 
+  createUserController.handle
+)
+.post(
+  "/login", 
+  authenticateUserController.handle
+)
+.post(
   "/compliments", 
   ensureAuthenticated, 
   createComplimentController.handle
 );
 
-router.get(
-  "users/compliments/send",
+router
+.get(
+  "/users/compliments/send",
   ensureAuthenticated,
   listUserSendComplimentsController.handle
-);
-router.get(
-  "users/compliments/receive",
+)
+.get(
+  "/users/compliments/receive",
   ensureAuthenticated,
   listUserReceiveComplimentsController.handle
+)
+.get(
+  "/tags",
+  listTagsController.handle
+)
+.get(
+  "/users", 
+  ensureAuthenticated,
+  ensureAdmin, 
+  listUsersController.handle
 );
-
-router.get("/tags", listTagsController.handle);
-router.get("/users", ensureAuthenticated, listUsersController.handle);
 
 export { router };
