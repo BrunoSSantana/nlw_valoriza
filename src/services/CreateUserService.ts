@@ -1,5 +1,6 @@
 import { hash } from "bcryptjs";
 import { getCustomRepository } from "typeorm";
+import { AppError } from "../errors/AppErros";
 import { UsersRepositories } from "../repositories/UsersRepositories";
 
 interface IUserRequest {
@@ -16,7 +17,7 @@ class CreateUserService {
     const userAlreadyExists = await userRepository.findOne({ email });
 
     if (userAlreadyExists) {
-      throw new Error("User already Exists");
+      throw new AppError("User already Exists");
     }
 
     const passwordHash = await hash(password, 8)
