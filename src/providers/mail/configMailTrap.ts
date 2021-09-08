@@ -1,4 +1,4 @@
-const config = {
+const configMailTrap = {
   host: "smtp.mailtrap.io",
   port: 2525,
   auth: {
@@ -10,4 +10,4 @@ const config = {
   }
 };
 
-export { config }
+export { configMailTrap }

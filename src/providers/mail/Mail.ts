@@ -1,7 +1,7 @@
 import handlebars from "handlebars";
 import { readFileSync } from "fs";
 import * as nodemailer from "nodemailer";
-import { config } from "./config";
+import { configMailTrap } from "./configMailTrap";
 
 
 class Mail {
@@ -9,9 +9,9 @@ class Mail {
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: config.host,
-      port: config.port,
-      auth: config.auth,
+      host: configMailTrap.host,
+      port: configMailTrap.port,
+      auth: configMailTrap.auth,
     })
   }
 
