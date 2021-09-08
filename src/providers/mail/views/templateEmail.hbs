@@ -2,9 +2,6 @@
   .container{
     width: 800px;
     font-family: Arial, Helvetica, sans-serif;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
   }
   span{
     margin: 10px;
@@ -12,12 +9,12 @@
 </style>
 
 <div class="container">
-  <span>Olá, {{receiver}}</span>
+  <p>Olá, {{receiver}}</p>
   <br/>
-  <span>Você acabou de receber um compliment do seu colega {{sender}}.</span>
-  <div>Message:</br>
-  <i>" {{message}} "</i>
-  </div>
+  <p>Você acabou de receber um compliment do seu colega {{sender}}.</p>
+  <p>Compliment:</br>
+  <i>"{{message}}"</i>
+  </p>
 
   <strong>Continue Fazendo um bom trabalho</strong>
 

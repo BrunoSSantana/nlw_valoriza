@@ -40,19 +40,16 @@ class CreateComplimentService {
 
     await complimentsRepositories.save(compliment);
 
-    const path = resolve(__dirname,"..","providers", "mail", "views", "templateEmail.hbs")
+    const path = resolve(__dirname, "..", "providers", "mail", "views", "templateEmail.hbs")
 
-    const templateFileContent = fs.readFileSync(path).toString("utf-8");
+    const variables = { sender: userSender.name, receiver: userReceiverExists.name, message }
 
-    const templateParse = handlebars.compile(templateFileContent);
-
-    const templateHTML = templateParse({ sender: userSender.name, receiver: userReceiverExists.name, message })
-
-    Mail.sendMail({
-      to: `"${userReceiverExists.name}" <${userReceiverExists.email}>`,
-      subject: "Valoriza",
-      html: templateHTML
-    })
+    Mail.sendMail(
+      `"${userReceiverExists.name}" <${userReceiverExists.email}>`,
+      "Valoriza",
+      path,
+      variables
+    )
 
     return compliment;
 
