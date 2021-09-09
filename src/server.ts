@@ -1,7 +1,9 @@
 import "reflect-metadata";
 import "express-async-errors";
+import dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
+dotenv.config();
 
 import { router } from "./routes";
 
@@ -29,4 +31,4 @@ app.use(
   }
 );
 
-app.listen(3333, () => console.log('Server is running'));
+app.listen(process.env.PORT || 3333, () => console.log('Server is running'));
