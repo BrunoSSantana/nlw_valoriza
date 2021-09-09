@@ -4,7 +4,7 @@ import { resolve } from "path";
 import { getCustomRepository } from "typeorm"
 
 import { AppError } from "../errors/AppErros";
-import Mail from "../providers/mail/Mail";
+import Mail from "../providers/mail/MailProvider";
 import { ComplimentsRepositories } from "../repositories/ComplimentsRepositories"
 import { UsersRepositories } from "../repositories/UsersRepositories";
 

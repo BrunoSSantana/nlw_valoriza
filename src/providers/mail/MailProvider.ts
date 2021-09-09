@@ -1,17 +1,20 @@
+import dotenv from 'dotenv'
 import handlebars from "handlebars";
 import { readFileSync } from "fs";
 import * as nodemailer from "nodemailer";
-import { configMailTrap } from "./configMailTrap";
+import { SentMessageInfo } from "nodemailer/lib/smtp-transport";
+import { config } from "./configs";
 
+dotenv.config()
 
 class Mail {
-  private transporter;
+  private transporter: nodemailer.Transporter<SentMessageInfo>;
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: configMailTrap.host,
-      port: configMailTrap.port,
-      auth: configMailTrap.auth,
+      port: config.port,
+      host: config.host,
+      auth: config.auth,
     })
   }
 
@@ -32,7 +35,7 @@ class Mail {
 
     await this.transporter.sendMail({
       to,
-      from: "Valoriza <valoriza@somosvaloriza.com.br>",
+      from: `Valoriza <${process.env.MAIL_ADRESS}>`,
       subject,
       html: templateHTML
     })
