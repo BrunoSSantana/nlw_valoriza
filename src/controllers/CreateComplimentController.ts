@@ -3,7 +3,7 @@ import { CreateComplimentService } from "../services/CreateComplimentService";
 
 class CreateComplimentController {
   async handle(request: Request, response: Response) {
-    try {
+    // try {
       const { tag_id, user_receiver, message } = request.body;
 
       const {user_id} = request;
@@ -18,12 +18,12 @@ class CreateComplimentController {
       })
   
       return response.json(compliment)      
-    } catch (error) {
-      return response.status(500).json({
-        status: "error",
-        message: "Internal Server Error",
-      })
-    }
+    // } catch (error) {
+    //   return response.status(500).json({
+    //     status: "error",
+    //     message: "Internal Server Error",
+    //   })
+    // }
 
 
   }
