@@ -41,7 +41,7 @@ Foi abordado durante o desenvolvimento da API `Many to One`, utilizando `TypeORM
 ## Documentação
   Para abrir o arquivo de documentaçã o é necessário a instalação do [insomnia](https://insomnia.rest/download). Em seguida é a importação do arquivo como [mostra na documentação](https://docs.insomnia.rest/insomnia/import-export-data).
 
-📑 [Documentação](https://github.com/BrunoSSantana/nlw_valoriza/blob/main/Insomnia_2021-09-12.json)
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=nlw_valoriza&uri=https%3A%2F%2Fraw.githubusercontent.com%2FBrunoSSantana%2Fnlw_valoriza%2Fmain%2Fapi_doc.json)
 
 ## ☑️ Funcionalidades
 
