@@ -8,7 +8,9 @@
 
 # 🏷️ Sobre
 
-Esse projeto foi desenvolvido com o objetivo de ensinar como criar controle de acesso de usuário, utilizando NodeJS.
+Esse projeto foi desenvolvido com o objetivo de praticar a criação controle de acesso de usuário, utilizando NodeJS.
+
+[Link da API](https://nlw-valorize.herokuapp.com/)
 
 ## 📖  Conceitos Utilizados
 
