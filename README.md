@@ -36,6 +36,10 @@ Foi abordado durante o desenvolvimento da API `Many to One`, utilizando `TypeORM
     // Iniciar projeto
     $ yarn dev
 ```
+## Documentação
+  Para abrir o arquivo de documentaçã o é necessário a instalação do [insomnia](https://insomnia.rest/download). Em seguida é a importação do arquivo como [mostra na documentação](https://docs.insomnia.rest/insomnia/import-export-data).
+
+📑 [Documentação](https://github.com/BrunoSSantana/nlw_valoriza/blob/main/Insomnia_2021-09-12.json)
 
 ## ☑️ Funcionalidades
 
@@ -49,7 +53,7 @@ Foi abordado durante o desenvolvimento da API `Many to One`, utilizando `TypeORM
 - [x] Listagem de todas as Tags
 - [x] Listagem de Compliments por usuário que enviou
 - [x] Listagem de Compliments por usuário que recebeu
----
+- [x] Envio de email ao criar o Compliment
 
 
 ## Author
